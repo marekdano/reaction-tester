@@ -9,35 +9,15 @@
 </head>
 
 <body>
-<p>Your time: <span id="time"></span></p>
+	<h1>Test your reaction!</h1>
+
+	<p>Click on the boxes and circles as quickly as you can!</p>
+
+  <p class="bold">Your time: <span id="time">0</span>s</p>
 
 	<div id="box"></div>
 
-	<script type="text/javascript">
-
-	var clickedTime, createdTime, reactionTime;
-
-	function makeBox() {
-		var time = Math.random();
-		time = time * 5000;
-
-		setTimeout(function() {
-			document.getElementById("box").style.display = "block";
-			createdTime = Date.now();
-		}, time);
-	}
-
-	document.getElementById("box").onclick = function() {
-		clickedTime = Date.now();
-		reactionTime = (clickedTime - createdTime)/1000;
-		document.getElementById("time").innerHTML = reactionTime;
-		this.style.display = "none";
-		makeBox();
-	}
-
-	makeBox();
-
-	</script>
+	<script type="text/javascript" src="scripts.js"></script>
 </body>
 
 </html>
